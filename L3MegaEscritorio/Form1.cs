@@ -76,7 +76,7 @@ namespace L3MegaEscritorio
             int deskPriceQuote = basicDeskPrice;
 
             // Temporary code while trying to fix the program.
-            Console.WriteLine("$" + deskPriceQuote);
+            MessageBox.Show("Desk Quote is $" + deskPriceQuote);
             prepareQuoteButton.Enabled = true;
         }
 
