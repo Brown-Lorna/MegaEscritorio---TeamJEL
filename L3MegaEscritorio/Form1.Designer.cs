@@ -137,7 +137,6 @@
             0,
             0,
             0});
-           // this.deskDepth.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
             // 
             // label6
             // 
@@ -291,6 +290,8 @@
             // noticeInstructions
             // 
             this.noticeInstructions.AutoSize = true;
+            this.noticeInstructions.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noticeInstructions.ForeColor = System.Drawing.Color.Red;
             this.noticeInstructions.Location = new System.Drawing.Point(124, 261);
             this.noticeInstructions.Name = "noticeInstructions";
             this.noticeInstructions.Size = new System.Drawing.Size(0, 22);
