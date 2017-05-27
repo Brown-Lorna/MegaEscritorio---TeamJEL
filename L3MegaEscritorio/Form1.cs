@@ -8,7 +8,7 @@ namespace L3MegaEscritorio
         // This integer variable stores the number for the surface measurement.
         int deskSurfaceArea;
 
-        // These integers store the current prices for variaous desk options.
+        // These integers store the current prices for various desk options.
         int surfaceBaseArea = 1000;
         int surfaceBasePrice = 200;
         int SurfaceOveragePrice = 1;
