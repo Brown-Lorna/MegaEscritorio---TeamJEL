@@ -8,9 +8,12 @@ namespace L3MegaEscritorio
         int deskSurfaceArea;
         int orderTimePrice;
         int deskPriceQuote;
+        int numOfDrawers;
         string material;
         int materialCost;
-        int orderDays;
+        int rushOrderDays;
+        int width;
+        int depth;
 
         // These integers store the current prices for various desk options.
         int surfaceBaseArea = 1000;
@@ -28,7 +31,7 @@ namespace L3MegaEscritorio
 
         // This DateTime is for the quote date.
         DateTime quoteDate = new DateTime();
-        
+
 
         public DateTime GetQuoteDate()
         {
@@ -58,11 +61,23 @@ namespace L3MegaEscritorio
         {
             int surfaceOverageInches;
 
-            // Get input from ComboBox.
-            int numOfDrawers = Int32.Parse(numberOfDrawers.Text);
+            try
+            {
+                // Get input from NumericUpDown.
+                width = (int)deskWidth.Value;
+                depth = (int)deskDepth.Value;
 
-            // Cast the dimensions to ints and calculate the surface area.
-            deskSurfaceArea = (int)deskWidth.Value * (int)deskDepth.Value;
+                // Get input from ComboBoxes.
+                numOfDrawers = Int32.Parse(numberOfDrawers.Text);
+                material = surfaceMaterial.SelectedItem.ToString();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Invalid Input");
+            }
+
+            // Calculate the surface area.
+            deskSurfaceArea = width * depth;
 
             // Calculate the surface area overage, if any.
             if (deskSurfaceArea > 1000)
@@ -74,47 +89,65 @@ namespace L3MegaEscritorio
                 surfaceOverageInches = 0;
             }
 
-              if (surfaceMaterial.SelectedValue == "Pine")
-              {
-                  materialCost = pinePrice;
-                  material = "Pine";
-              }
-              else if (surfaceMaterial.SelectedValue == "Laminate")
-              {
-                  materialCost = laminatePrice;
-                  material = "Laminate";
-              }
-              else if (surfaceMaterial.SelectedValue == "Oak")
-              {
-                  materialCost = oakPrice;
-                  material = "Oak";
-              } 
+            if (material == "Pine")
+            {
+                materialCost = pinePrice;
+                material = "Pine";
+            }
+            else if (material == "Laminate")
+            {
+                materialCost = laminatePrice;
+                material = "Laminate";
+            }
+            else if (material == "Oak")
+            {
+                materialCost = oakPrice;
+                material = "Oak";
+            }
+            else if (material == "Cherry")
+            {
+                materialCost = cherryPrice;
+                material = "Cherry";
+            }
+            else if (material == "Walnut")
+            {
+                materialCost = walnutPrice;
+                material = "Walnut";
+            }
+            else if (material == "Ipe")
+            {
+                materialCost = ipePrice;
+                material = "Ipe";
+            }
+            else
+            {
+            }
 
             if (dayThree.Checked)
             {
                 if (deskSurfaceArea < 1000) orderTimePrice = 60;
                 else if ((deskSurfaceArea >= 1001) && (deskSurfaceArea <= 1999)) orderTimePrice = 70;
                 else orderTimePrice = 80;
-                orderDays = 3;
-            }  
+                rushOrderDays = 3;
+            }
             else if (dayFive.Checked)
             {
                 if (deskSurfaceArea < 1000) orderTimePrice = 40;
                 else if ((deskSurfaceArea >= 1000) && (deskSurfaceArea <= 1999)) orderTimePrice = 50;
                 else orderTimePrice = 60;
-                orderDays = 5;
+                rushOrderDays = 5;
             }
             else if (daySeven.Checked)
             {
                 if (deskSurfaceArea < 1000) orderTimePrice = 30;
                 else if ((deskSurfaceArea >= 1001) && (deskSurfaceArea <= 1999)) orderTimePrice = 30;
                 else orderTimePrice = 40;
-                orderDays = 7;
+                rushOrderDays = 7;
             }
             else if (dayFourteen.Checked)
             {
                 orderTimePrice = 0;
-                orderDays = 14;
+                rushOrderDays = 14;
             }
             else
             {
@@ -132,8 +165,8 @@ namespace L3MegaEscritorio
             // Temporary code while trying to fix the program.
             MessageBox.Show("Desk Quote is $" + deskPriceQuote);
 
-   //     Desk newDesk = new Desk(deskWidth, deskDepth, numberOfDrawers, surfaceMaterial, orderDays, deskPriceQuote);
-    //    Console.WriteLine(newDesk);
+            Desk newDesk = new Desk(width, depth, numOfDrawers, material, rushOrderDays, deskPriceQuote);
+            Console.WriteLine(newDesk);
         }
 
         private void PrepareQuote_Click(object sender, EventArgs e)
@@ -146,10 +179,10 @@ namespace L3MegaEscritorio
         public bool AvoidErrors()
         {
             if ((numberOfDrawers.Text == "") || (surfaceMaterial.Text == ""))
-               {
-              noticeInstructions.Text = ("You must make a selection from each category.");
-              return false;
-              }
+            {
+                noticeInstructions.Text = ("You must make a selection from each category.");
+                return false;
+            }
             return true;
         }
 
@@ -174,3 +207,4 @@ namespace L3MegaEscritorio
         }
     }
 }
+
