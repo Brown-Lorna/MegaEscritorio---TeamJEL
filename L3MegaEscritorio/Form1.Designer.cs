@@ -322,7 +322,7 @@
             this.dayFourteen.TabStop = true;
             this.dayFourteen.Text = "14 days (normal delivery)";
             this.dayFourteen.UseVisualStyleBackColor = true;
-            this.dayFourteen.CheckedChanged += new System.EventHandler(this.PrepareQuote_Click);
+            this.dayFourteen.CheckedChanged += new System.EventHandler(this.DayFourteenChanged);
             // 
             // daySeven
             // 
@@ -334,7 +334,7 @@
             this.daySeven.TabStop = true;
             this.daySeven.Text = "7days";
             this.daySeven.UseVisualStyleBackColor = true;
-            this.daySeven.CheckedChanged += new System.EventHandler(this.PrepareQuote_Click);
+            this.daySeven.CheckedChanged += new System.EventHandler(this.DaySevenChanged);
             // 
             // dayFive
             // 
@@ -346,7 +346,7 @@
             this.dayFive.TabStop = true;
             this.dayFive.Text = "5 days";
             this.dayFive.UseVisualStyleBackColor = true;
-            this.dayFive.CheckedChanged += new System.EventHandler(this.PrepareQuote_Click);
+            this.dayFive.CheckedChanged += new System.EventHandler(this.DayFiveChanged);
             // 
             // dayThree
             // 
@@ -358,7 +358,7 @@
             this.dayThree.TabStop = true;
             this.dayThree.Text = "3 days";
             this.dayThree.UseVisualStyleBackColor = true;
-            this.dayThree.CheckedChanged += new System.EventHandler(this.PrepareQuote_Click);
+            this.dayThree.CheckedChanged += new System.EventHandler(this.DayThreeChanged);
             // 
             // deskOptionsGroupBox
             // 

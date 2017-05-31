@@ -3,6 +3,16 @@ using System.Windows.Forms;
 
 namespace L3MegaEscritorio
 {
+    enum DesktopMaterial
+    {
+        Pine,
+        Laminate,
+        Oak,
+        Cherry,
+        Walnut,
+        Ipe
+    };
+
     public partial class Form1 : Form
     {
         int deskSurfaceArea;
@@ -160,14 +170,16 @@ namespace L3MegaEscritorio
             int basicDeskPrice = deskBasePrice + surfaceOverageCost;
             int drawerOptionPrice = numOfDrawers * pricePerDrawer;
 
-            int deskPriceQuote = (basicDeskPrice + drawerOptionPrice + materialCost + orderTimePrice);
+            deskPriceQuote = (basicDeskPrice + drawerOptionPrice + materialCost + orderTimePrice);
 
             // Temporary code while trying to fix the program.
             MessageBox.Show("Desk Quote is $" + deskPriceQuote);
 
             Desk newDesk = new Desk(width, depth, numOfDrawers, material, rushOrderDays, deskPriceQuote);
-            Console.WriteLine(newDesk);
-        }
+            // Console.WriteLine(newDesk);
+
+            DeskQuote.WriteQuote(width, depth, numOfDrawers, material, rushOrderDays, deskPriceQuote);
+            }
 
         private void PrepareQuote_Click(object sender, EventArgs e)
         {
@@ -190,20 +202,24 @@ namespace L3MegaEscritorio
         {
         }
 
-        private void dayThreeChanged(object sender, EventArgs e)
+        private void DayThreeChanged(object sender, EventArgs e)
         {
+
         }
 
-        private void dayFiveChanged(object sender, EventArgs e)
+        private void DayFiveChanged(object sender, EventArgs e)
         {
+
         }
 
-        private void daySevenChanged(object sender, EventArgs e)
+        private void DaySevenChanged(object sender, EventArgs e)
         {
+
         }
 
-        private void dayFourteenChanged(object sender, EventArgs e)
+        private void DayFourteenChanged(object sender, EventArgs e)
         {
+
         }
     }
 }

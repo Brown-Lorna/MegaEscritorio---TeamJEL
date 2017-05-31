@@ -24,7 +24,7 @@ namespace L3MegaEscritorio
                 deskPriceQuote = inDeskPriceQuote;
             }
 
-            public static int deskArea(int width, int depth)
+            public static int DeskArea(int width, int depth)
             {
                 int area = width * depth;
                 return area;

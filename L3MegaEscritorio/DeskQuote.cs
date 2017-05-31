@@ -11,7 +11,7 @@ namespace L3MegaEscritorio
         // CONTROLLER
         public class DeskQuote
         {
-            internal static void writeQuote(int width, int depth, int numOfDrawers, string material, int rushOrderDays, int deskPriceQuote)
+            internal static void WriteQuote(int width, int depth, int numOfDrawers, string material, int rushOrderDays, int deskPriceQuote)
             {
                 string path;
                 path =
@@ -60,7 +60,7 @@ namespace L3MegaEscritorio
                 }
             }
 
-            public static double makeQuote(int x, int y, int z, int i, int j)
+            public static int MakeQuote(int x, int y, int z, int i, int j)
             {
                 int quote = 0;
 
@@ -76,14 +76,14 @@ namespace L3MegaEscritorio
                 return quote;
             }
 
-            public static string buildQuoteSheet()
+            public static string BuildQuoteSheet()
             {
                 string text = "";
 
                 try
                 {
                     string path;
-                    path = @"~\L3MegaEscritorio\Resources\deskquotes.txt";
+                    path = @"~\MegaEscritorio - TeamJEL\L3MegaEscritorio\Resources\deskquotes.txt";
 
                     //@"D:\BYU-Idaho\2017\Spring\CIT301C\MegaEscritorioDesktop\MegaEscritorioDesktop\quotes.txt";
 
@@ -127,14 +127,14 @@ namespace L3MegaEscritorio
                 return text;
             }
 
-            public static string searchQuoteSheet(string materialName)
+            public static string SearchQuoteSheet(string materialName)
             {
                 string text = "";
 
                 try
                 {
                     string path;
-                    path = @"~\L3MegaEscritorio\Resources\deskquotes.txt";
+                    path = @"~\MegaEscritorio - TeamJEL\L3MegaEscritorio\Resources\deskquotes.txt";
 
                     // @"D:\BYU-Idaho\2017\Spring\CIT301C\MegaEscritorioDesktop\MegaEscritorioDesktop\quotes.txt";
 
@@ -180,10 +180,10 @@ namespace L3MegaEscritorio
                 return text;
             }
 
-            public static void deleteQuote(int quoteNumber)
+            public static void DeleteQuote(int quoteNumber)
             {
                 string path;
-                path = @"~\L3MegaEscritorio\Resources\deskquotes.txt";
+                path = @"~\MegaEscritorio - TeamJEL\L3MegaEscritorio\Resources\deskquotes.txt";
 
 
                 // @"D:\BYU-Idaho\2017\Spring\CIT301C\MegaEscritorioDesktop\MegaEscritorioDesktop\quotes.txt";
@@ -222,14 +222,14 @@ namespace L3MegaEscritorio
                 }
             }
 
-            public static int countQuotes()
+            public static int CountQuotes()
             {
                 int i = 0;
 
                 try
                 {
                     string path;
-                    path = @"~\L3MegaEscritorio\Resources\deskquotes.txt";
+                    path = @"~\MegaEscritorio - TeamJEL\L3MegaEscritorio\Resources\deskquotes.txt";
 
                     // @"D:\BYU-Idaho\2017\Spring\CIT301C\MegaEscritorioDesktop\MegaEscritorioDesktop\quotes.txt";
 
