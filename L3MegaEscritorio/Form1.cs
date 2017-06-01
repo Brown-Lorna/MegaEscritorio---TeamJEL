@@ -19,7 +19,7 @@ namespace L3MegaEscritorio
         int orderTimePrice;
         int deskPriceQuote;
         int numOfDrawers;
-        string material;
+        DesktopMaterial material;
         int materialCost;
         int rushOrderDays;
         int width;
@@ -79,7 +79,8 @@ namespace L3MegaEscritorio
 
                 // Get input from ComboBoxes.
                 numOfDrawers = Int32.Parse(numberOfDrawers.Text);
-                material = surfaceMaterial.SelectedItem.ToString();
+                // Error because of the Enum
+                material = surfaceMaterial.SelectedItem;
             }
             catch (Exception e)
             {
@@ -99,35 +100,35 @@ namespace L3MegaEscritorio
                 surfaceOverageInches = 0;
             }
 
-            if (material == "Pine")
+            if (material == DesktopMaterial.Pine)
             {
                 materialCost = pinePrice;
-                material = "Pine";
+               // material = "Pine";
             }
-            else if (material == "Laminate")
+            else if (material == DesktopMaterial.Laminate)
             {
                 materialCost = laminatePrice;
-                material = "Laminate";
+               // material = "Laminate";
             }
-            else if (material == "Oak")
+            else if (material == DesktopMaterial.Oak)
             {
                 materialCost = oakPrice;
-                material = "Oak";
+              //  material = "Oak";
             }
-            else if (material == "Cherry")
+            else if (material == DesktopMaterial.Cherry)
             {
                 materialCost = cherryPrice;
-                material = "Cherry";
+              //  material = "Cherry";
             }
-            else if (material == "Walnut")
+            else if (material == DesktopMaterial.Walnut)
             {
                 materialCost = walnutPrice;
-                material = "Walnut";
+             //   material = "Walnut";
             }
-            else if (material == "Ipe")
+            else if (material == DesktopMaterial.Ipe)
             {
                 materialCost = ipePrice;
-                material = "Ipe";
+              //  material = "Ipe";
             }
             else
             {
@@ -178,7 +179,10 @@ namespace L3MegaEscritorio
             Desk newDesk = new Desk(width, depth, numOfDrawers, material, rushOrderDays, deskPriceQuote);
             // Console.WriteLine(newDesk);
 
-            DeskQuote.WriteQuote(width, depth, numOfDrawers, material, rushOrderDays, deskPriceQuote);
+            DeskQuote newDeskQuote = new DeskQuote();
+
+            // Error possibly from the Enum
+            newDeskQuote.WriteQuote(width, depth, numOfDrawers, material, rushOrderDays, deskPriceQuote);
             }
 
         private void PrepareQuote_Click(object sender, EventArgs e)

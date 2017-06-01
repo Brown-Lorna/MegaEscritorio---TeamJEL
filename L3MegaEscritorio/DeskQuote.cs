@@ -6,18 +6,14 @@ using System.Windows.Forms;
 
 namespace L3MegaEscritorio
 {
-    public partial class Form1 : Form
-    {
         // CONTROLLER
-        public class DeskQuote
+        class DeskQuote
         {
-            internal static void WriteQuote(int width, int depth, int numOfDrawers, string material, int rushOrderDays, int deskPriceQuote)
+            public static void WriteQuote(int width, int depth, int numOfDrawers, DesktopMaterial material, int rushOrderDays, int deskPriceQuote)
             {
                 string path;
                 path =
                 @"~\L3MegaEscritorio\Resources\deskquotes.txt";
-
-                // @"D:\BYU-Idaho\2017\Spring\CIT301C\MegaEscritorioDesktop\MegaEscritorioDesktop\quotes.txt";
 
                 try
                 {
@@ -83,9 +79,7 @@ namespace L3MegaEscritorio
                 try
                 {
                     string path;
-                    path = @"~\MegaEscritorio - TeamJEL\L3MegaEscritorio\Resources\deskquotes.txt";
-
-                    //@"D:\BYU-Idaho\2017\Spring\CIT301C\MegaEscritorioDesktop\MegaEscritorioDesktop\quotes.txt";
+                    path = @"~\L3MegaEscritorio\Resources\deskquotes.txt";
 
                     StreamReader reader = new StreamReader(path);
 
@@ -134,9 +128,7 @@ namespace L3MegaEscritorio
                 try
                 {
                     string path;
-                    path = @"~\MegaEscritorio - TeamJEL\L3MegaEscritorio\Resources\deskquotes.txt";
-
-                    // @"D:\BYU-Idaho\2017\Spring\CIT301C\MegaEscritorioDesktop\MegaEscritorioDesktop\quotes.txt";
+                    path = @"~\L3MegaEscritorio\Resources\deskquotes.txt";
 
                     StreamReader reader = new StreamReader(path);
 
@@ -183,10 +175,7 @@ namespace L3MegaEscritorio
             public static void DeleteQuote(int quoteNumber)
             {
                 string path;
-                path = @"~\MegaEscritorio - TeamJEL\L3MegaEscritorio\Resources\deskquotes.txt";
-
-
-                // @"D:\BYU-Idaho\2017\Spring\CIT301C\MegaEscritorioDesktop\MegaEscritorioDesktop\quotes.txt";
+                path = @"~\L3MegaEscritorio\Resources\deskquotes.txt";
 
                 try
                 {
@@ -229,9 +218,7 @@ namespace L3MegaEscritorio
                 try
                 {
                     string path;
-                    path = @"~\MegaEscritorio - TeamJEL\L3MegaEscritorio\Resources\deskquotes.txt";
-
-                    // @"D:\BYU-Idaho\2017\Spring\CIT301C\MegaEscritorioDesktop\MegaEscritorioDesktop\quotes.txt";
+                    path = @"~\L3MegaEscritorio\Resources\deskquotes.txt";
 
                     StreamReader reader = new StreamReader(path);
 
@@ -252,7 +239,5 @@ namespace L3MegaEscritorio
                 return i;
             }
         }
-
-    }
 }
 

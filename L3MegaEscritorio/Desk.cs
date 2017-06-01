@@ -2,19 +2,17 @@
 
 namespace L3MegaEscritorio
 {
-    public partial class Form1 : Form
-    {
         // Model
-        public class Desk
+        class Desk
         {
             int width = 0;
             int depth = 0;
             int numOfDrawers = 0;
-            string material = "";
+            DesktopMaterial material;
             int rushOrderDays = 0;
             int deskPriceQuote = 0;
 
-            public Desk(int inWidth, int inDepth, int inNumOfDrawers, string inMaterial, int inRushOrderDays, int inDeskPriceQuote)
+            public Desk(int inWidth, int inDepth, int inNumOfDrawers, DesktopMaterial inMaterial, int inRushOrderDays, int inDeskPriceQuote)
             {
                 width = inWidth;
                 depth = inDepth;
@@ -30,5 +28,4 @@ namespace L3MegaEscritorio
                 return area;
             }
         }
-    }
 }
